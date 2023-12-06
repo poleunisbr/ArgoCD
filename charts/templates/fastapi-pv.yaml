@@ -8,4 +8,4 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: /home/falcowalko/milestone2-files/app
+    path: /home/vagrant/milestone2-files/app
