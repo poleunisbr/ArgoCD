@@ -1,0 +1,35 @@
+version: "3"
+services:
+  # Apache Web Server
+  apache:
+    image: ubuntu/apache2:latest
+    container_name: cont-bp-apache
+    ports:
+      - "8080:80"
+    volumes:
+      - /home/falcowalko/stack/web:/var/www/html  # Map local web directory to var/www/html
+
+  # FastAPI Service
+  fastapi:
+    image: tiangolo/uvicorn-gunicorn-fastapi:python3.8
+    container_name: cont-bp-fastapi
+    ports:
+      - "8000:80"
+    environment:
+      - MODULE_NAME=main
+      - VARIABLE_NAME=app
+    volumes:
+      - /home/falcowalko/stack/app:/app  # Map the local app directory to the FastAPI app directory
+
+  # PostgreSQL Database
+  postgres:
+    image: bitnami/postgresql:latest
+    container_name: cont-bp-postgres
+    environment:
+      POSTGRES_DATABASE: name
+      POSTGRES_USERNAME: bryan
+      POSTGRES_PASSWORD: pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - /home/falcowalko/stack/database:/bitnami/postgresql  # Map the local database directory to the PostgreSQL data directory
