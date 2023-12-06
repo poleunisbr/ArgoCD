@@ -8,4 +8,4 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: ./web
+    path: /home/falcowalko/milestone2-files/web
