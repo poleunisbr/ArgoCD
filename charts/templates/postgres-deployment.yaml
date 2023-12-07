@@ -39,13 +39,4 @@ spec:
         ports:
         - containerPort: 5432
         resources: {}
-        volumeMounts:
-        - mountPath: /bitnami/postgresql
-          name: postgres-claim0
-      restartPolicy: Always
-      serviceAccountName: ""
-      volumes:
-      - name: postgres-claim0
-        persistentVolumeClaim:
-          claimName: postgres-claim0
 status: {}
