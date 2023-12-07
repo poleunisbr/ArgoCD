@@ -33,7 +33,7 @@ spec:
           value: pass
         - name: POSTGRES_USERNAME
           value: bryan
-        image: bitnami/postgresql:latest
+        image: falcowalko/postgres-ms2:latest
         imagePullPolicy: ""
         name: cont-bp-postgres
         ports:
