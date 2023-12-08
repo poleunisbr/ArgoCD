@@ -30,9 +30,9 @@ spec:
         - name: POSTGRES_DATABASE
           value: name
         - name: POSTGRES_PASSWORD
-          value: pass
+          value: postgres
         - name: POSTGRES_USERNAME
-          value: bryan
+          value: postgres
         image: falcowalko/postgres-ms2:latest
         imagePullPolicy: ""
         name: cont-bp-postgres
